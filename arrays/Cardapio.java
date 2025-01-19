@@ -1,7 +1,6 @@
 package arrays;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Cardapio {
 
@@ -21,5 +20,16 @@ public class Cardapio {
                 item.imprimir();
             }
         }
+    }
+
+    ArrayList<ItemCardapio> consultarPorPreco(double precoMaximo, double precoMinimo){
+        ArrayList<ItemCardapio> itensEncontrados = new ArrayList<>();
+
+        for (ItemCardapio item : itens) {
+            if (item.possuiPrecoEntre(item.preco, precoMaximo)) {
+                itensEncontrados.add(item);
+            }
+        }
+        return itensEncontrados;
     }
 }
