@@ -9,10 +9,14 @@ public class Produto {
     String nome;
     int quantidadeEstoque;
 
+    Produto() {
+        this("Sem nome"); //ESTA CHAMANDO OUTRO CONSTRUTOR
+        System.out.println("Teste");
+    }
+
+
     Produto(String nome) {
-        Objects.requireNonNull(nome, "Nome e obrigatorio");
-        this.nome = nome;
-        this.quantidadeEstoque = QUANTIDADE_ESTOQUE_INICIAL;
+        this(nome, QUANTIDADE_ESTOQUE_INICIAL);
     }
 
     Produto(String nome, int estoqueInicial) {
@@ -23,11 +27,4 @@ public class Produto {
         this.nome = nome;
         this.quantidadeEstoque = estoqueInicial;
     }
-
-    Produto() {
-        this.nome = "Sem nome";
-        this.quantidadeEstoque = QUANTIDADE_ESTOQUE_INICIAL;
-    }
-
-
 }
