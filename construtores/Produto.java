@@ -5,10 +5,10 @@ import java.util.UUID;
 
 public class Produto {
 
-    static final int QUANTIDADE_ESTOQUE_INICIAL = 100;
-    final String codigo;
-    String nome;
-    int quantidadeEstoque;
+    private static final int QUANTIDADE_ESTOQUE_INICIAL = 100;
+    private final String codigo;
+    private String nome;
+    private  int quantidadeEstoque;
 
     Produto() {
         this("Sem nome"); //ESTA CHAMANDO OUTRO CONSTRUTOR
@@ -20,7 +20,7 @@ public class Produto {
         this(nome, QUANTIDADE_ESTOQUE_INICIAL);
     }
 
-    Produto(String nome, int estoqueInicial) {
+    private Produto(String nome, int estoqueInicial) {
         Objects.requireNonNull(nome, "Nome e obrigatorio");
         if (estoqueInicial < 0 ){
             throw  new IllegalArgumentException("Estoque inicial nao pode ser negativo");

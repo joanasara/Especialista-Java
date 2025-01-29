@@ -2,8 +2,8 @@ package construtores;
 
 public class Participante {
 
-    String nome;
-    int saldoDePontos;
+    private String nome;
+    private int saldoDePontos;
 
     Participante(String nome) {
         this.nome = nome;
